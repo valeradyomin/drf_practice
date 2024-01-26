@@ -33,6 +33,7 @@ class Moto(models.Model):
 
 
 class Milage(models.Model):
+    # add related_name in order to not use '_set'
     car = models.ForeignKey(Car, on_delete=models.CASCADE, verbose_name='машина', **NULLABLE, related_name='milage')
     moto = models.ForeignKey(Moto, on_delete=models.CASCADE, verbose_name='мотоцикл', **NULLABLE, related_name='milage')
 
