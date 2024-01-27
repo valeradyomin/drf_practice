@@ -1,0 +1,124 @@
+[
+  {
+    "model": "vehicle.car",
+    "pk": 2,
+    "fields": {
+      "title": "Skoda Rapid",
+      "description": "good car"
+    }
+  },
+  {
+    "model": "vehicle.moto",
+    "pk": 1,
+    "fields": {
+      "title": "Kawasaki Ninja",
+      "description": "Very good moto"
+    }
+  },
+  {
+    "model": "vehicle.moto",
+    "pk": 3,
+    "fields": {
+      "title": "Honda",
+      "description": "not bad moto"
+    }
+  },
+  {
+    "model": "vehicle.moto",
+    "pk": 4,
+    "fields": {
+      "title": "Suzuki",
+      "description": "medium class moto"
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 1,
+    "fields": {
+      "car": 2,
+      "moto": null,
+      "milage": 100000,
+      "year": 2022
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 3,
+    "fields": {
+      "car": null,
+      "moto": 1,
+      "milage": 2500,
+      "year": 2023
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 4,
+    "fields": {
+      "car": null,
+      "moto": 3,
+      "milage": 7777,
+      "year": 2011
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 5,
+    "fields": {
+      "car": 2,
+      "moto": null,
+      "milage": 1234,
+      "year": 2001
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 6,
+    "fields": {
+      "car": 2,
+      "moto": null,
+      "milage": 500,
+      "year": 2023
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 7,
+    "fields": {
+      "car": null,
+      "moto": 1,
+      "milage": 100,
+      "year": 2023
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 8,
+    "fields": {
+      "car": null,
+      "moto": 4,
+      "milage": 3000,
+      "year": 1997
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 9,
+    "fields": {
+      "car": null,
+      "moto": 4,
+      "milage": 5000,
+      "year": 2001
+    }
+  },
+  {
+    "model": "vehicle.milage",
+    "pk": 10,
+    "fields": {
+      "car": null,
+      "moto": 4,
+      "milage": 9000,
+      "year": 2005
+    }
+  }
+]
