@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'vehicle',
     'django_filters',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
