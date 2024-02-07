@@ -5,11 +5,13 @@ from rest_framework.filters import OrderingFilter
 from vehicle.models import Car, Moto, Milage
 from vehicle.serializers import CarSerializer, MotoSerializer, MilageSerializer, MotoMilageSerializer, \
     MotoCreateSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class CarViewSet(viewsets.ModelViewSet):
     serializer_class = CarSerializer
     queryset = Car.objects.all()
+    permission_classes = [IsAuthenticated]
 
 
 # class MotoCreateAPIView(generics.CreateAPIView):
