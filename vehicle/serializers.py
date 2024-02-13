@@ -20,8 +20,9 @@ class MilageSerializer(serializers.ModelSerializer):
 
 
 class CarSerializer(serializers.ModelSerializer):
-    last_milage = serializers.SerializerMethodField()
-    milage = MilageSerializer(many=True)
+    # last_milage = serializers.SerializerMethodField()
+    last_milage = serializers.IntegerField(source='milage_set.all.first.milage', read_only=True)
+    milage = MilageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Car
@@ -32,8 +33,23 @@ class CarSerializer(serializers.ModelSerializer):
             return obj.milage.all().first().milage
         return 0
 
+    # def create(self, validated_data):
+    #     milages_data = validated_data.pop('milage')
+    #     car = Car.objects.create(**validated_data)
+    #     for milage_data in milages_data:
+    #         Milage.objects.create(car=car, **milage_data)
+    #     return car
+
     def create(self, validated_data):
-        milages_data = validated_data.pop('milage')
+        """
+        ==========================================================================v2 for pass data for testing
+        Create a new Car instance with the given validated data and associated milage data.
+        Parameters:
+            validated_data (dict): The validated data for creating the Car instance.
+        Returns:
+            Car: The newly created Car instance.
+        """
+        milages_data = validated_data.pop('milage', [])
         car = Car.objects.create(**validated_data)
         for milage_data in milages_data:
             Milage.objects.create(car=car, **milage_data)
