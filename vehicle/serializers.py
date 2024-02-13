@@ -90,6 +90,13 @@ class MotoCreateSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
+        """
+        Создает новый объект Moto на основе предоставленных проверенных данных.
+        Параметры:
+            validated_data: Проверенные данные для создания объекта Moto.
+        Возвращает:
+            Новый созданный объект Moto.
+        """
         milage_extracted = validated_data.pop('milage')
         moto_item = Moto.objects.create(**validated_data)
 
