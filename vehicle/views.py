@@ -22,6 +22,7 @@ class CarViewSet(viewsets.ModelViewSet):
 
 
 class MotoCreateAPIView(generics.CreateAPIView):
+    """Класс для создания представления API MotoCreateAPIView."""
     serializer_class = MotoCreateSerializer
     permission_classes = [IsAuthenticated]
 
