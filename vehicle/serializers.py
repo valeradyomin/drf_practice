@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from vehicle.models import Car, Moto, Milage
+from vehicle.services import convert_currency_to_usd
 from vehicle.validators import TitleValidator
 
 
@@ -23,6 +24,7 @@ class CarSerializer(serializers.ModelSerializer):
     # last_milage = serializers.SerializerMethodField()
     last_milage = serializers.IntegerField(source='milage_set.all.first.milage', read_only=True)
     milage = MilageSerializer(many=True, read_only=True)
+    usd_price = serializers.SerializerMethodField()
 
     class Meta:
         model = Car
@@ -54,6 +56,9 @@ class CarSerializer(serializers.ModelSerializer):
         for milage_data in milages_data:
             Milage.objects.create(car=car, **milage_data)
         return car
+
+    def get_usd_price(self, obj):
+        return convert_currency_to_usd(obj.ammount)
 
 
 class MotoSerializer(serializers.ModelSerializer):

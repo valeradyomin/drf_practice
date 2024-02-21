@@ -166,7 +166,8 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    '<http://localhost:8000>',  # Замените на адрес вашего фронтенд-сервера
+    # '<http://localhost:8000>',  # Замените на адрес вашего фронтенд-сервера
+    'https://example.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -175,3 +176,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
+
+CURRENCY_API_URL = 'https://api.currencyapi.com/'
+CURRENCY_API_KEY = 'cur_live_LNnL6sJthRgBT4zJYvOzNU7xsBDaYy0JUid1si41'
