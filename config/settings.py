@@ -179,3 +179,19 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 CURRENCY_API_URL = 'https://api.currencyapi.com/'
 CURRENCY_API_KEY = 'cur_live_LNnL6sJthRgBT4zJYvOzNU7xsBDaYy0JUid1si41'
+
+
+# URL-адрес брокера сообщений
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
+# URL-адрес брокера результатов, также Redis
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+# Часовой пояс для работы Celery
+CELERY_TIMEZONE = 'Europe/Moscow'
+
+# Флаг отслеживания выполнения задач
+CELERY_TASK_TRACK_STARTED = True
+
+# Максимальное время на выполнение задачи
+CELERY_TASK_TIME_LIMIT = 30 * 60
