@@ -13,7 +13,10 @@ class Car(models.Model):
     title = models.CharField(max_length=150, verbose_name='название')
     description = models.TextField(verbose_name='описание')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE)
+    # ammount was used before
     ammount = models.IntegerField(default=1000, verbose_name='цена')
+    # price was given latter
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name='стоимость')
 
     def __str__(self):
         return f'{self.title}'
@@ -27,6 +30,7 @@ class Moto(models.Model):
     title = models.CharField(max_length=150, verbose_name='название')
     description = models.TextField(verbose_name='описание')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name='стоимость')
 
     def __str__(self):
         return f'{self.title}'
